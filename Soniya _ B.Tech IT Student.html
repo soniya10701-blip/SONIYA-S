@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/soniy/Downloads/new_advance.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7028e4">
+  <title>Soniya | B.Tech IT Student</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --ink: #24123f;
+      --muted: #685b7b;
+      --paper: #fffaff;
+      --pink: #ff4fa3;
+      --purple: #7c3aed;
+      --blue: #38bdf8;
+      --yellow: #ffd166;
+      --mint: #5eead4;
+      --card: rgba(255,255,255,.88);
+      --shadow: 0 18px 50px rgba(87, 36, 142, .14);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Cooper Black", "Baloo 2", "Arial Rounded MT Bold", Georgia, serif;
+      transition: background .3s, color .3s;
+      overflow-x: hidden;
+    }
+    a { -webkit-tap-highlight-color: transparent; }
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(38, 15, 73, .92);
+      backdrop-filter: blur(14px);
+      padding: 16px 7%;
+      box-shadow: 0 6px 24px rgba(37, 10, 67, .18);
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .logo { color: var(--yellow); font-size: 28px; letter-spacing: .5px; text-shadow: 2px 2px 0 #ff4fa3; }
+    nav ul { display: flex; align-items: center; gap: 22px; list-style: none; }
+    nav a { color: white; text-decoration: none; font-size: 15px; transition: color .2s, transform .2s; display: inline-block; }
+    nav a:hover { color: var(--mint); transform: translateY(-2px); }
+    .theme-btn {
+      border: 2px solid rgba(255,255,255,.35); background: linear-gradient(135deg,var(--pink),var(--purple));
+      color: white; padding: 9px 13px; border-radius: 999px; cursor: pointer; font-size: 17px;
+      box-shadow: 0 5px 18px rgba(255,79,163,.28);
+    }
+
+    #home {
+      min-height: 90vh; display: flex; justify-content: center; align-items: center; text-align: center;
+      padding: 70px 8%; color: white; position: relative; isolation: isolate; overflow: hidden;
+      background: linear-gradient(125deg,rgba(45,10,95,.82),rgba(165,24,111,.72),rgba(24,61,160,.78),rgba(8,115,145,.76)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat;
+      background-size: 300% 300%, cover; animation: gradientMove 12s ease infinite;
+    }
+    #home::before, #home::after {
+      content: ""; position: absolute; z-index: -1; border-radius: 50%; filter: blur(1px); opacity: .6;
+    }
+    #home::before { width: 250px; height: 250px; background: var(--yellow); top: 8%; left: -75px; }
+    #home::after { width: 320px; height: 320px; background: var(--mint); bottom: -110px; right: -90px; }
+    /* Tech and skyline backgrounds across the portfolio */
+    #about, #skills, #projects {
+      position: relative; isolation: isolate;
+      background-size: cover; background-position: center; background-attachment: fixed;
+    }
+    #about { background-image: linear-gradient(rgba(255,241,248,.91),rgba(243,232,255,.92)),url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80"); }
+    #skills { background-image: linear-gradient(rgba(255,253,243,.92),rgba(255,253,243,.92)),url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=80"); }
+    #projects { background-image: linear-gradient(rgba(239,246,255,.91),rgba(253,242,248,.92)),url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=80"); }
+    #contact {
+      background-image: linear-gradient(135deg,rgba(46,16,101,.90),rgba(112,26,117,.88),rgba(30,58,138,.90)),url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover; background-position: center;
+    }
+    @keyframes gradientMove { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .home-content { max-width: 850px; }
+    .profile {
+      width: 142px; height: 142px; margin: 0 auto 26px; display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; background: linear-gradient(135deg,var(--yellow),var(--pink));
+      color: #4c1d95; font-size: 64px; border: 7px solid rgba(255,255,255,.82);
+      box-shadow: 0 0 0 9px rgba(255,255,255,.16), 0 15px 35px rgba(35,9,67,.22);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-12px) rotate(2deg); } }
+    .home-content h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.12; margin-bottom: 14px; text-shadow: 3px 4px 0 rgba(55,10,100,.25); }
+    .home-content h1 span { color: var(--yellow); }
+    .typing { color: #d9fff8; font-size: clamp(1.25rem, 3vw, 1.8rem); margin-bottom: 20px; }
+    .home-content p { max-width: 680px; margin: auto; line-height: 1.85; font-family: "Baloo 2", sans-serif; font-size: 18px; color: #fff7ff; }
+    .btn {
+      display: inline-block; margin-top: 30px; padding: 14px 28px; border-radius: 999px;
+      background: var(--yellow); color: #40116b; text-decoration: none; font-weight: 800;
+      box-shadow: 0 8px 0 #e59a28, 0 15px 30px rgba(45,8,80,.2); transition: transform .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-4px); box-shadow: 0 12px 0 #e59a28, 0 20px 35px rgba(45,8,80,.25); }
+
+    section { padding: 88px 8%; }
+    .section-title { text-align: center; font-size: clamp(2rem,4vw,2.7rem); margin-bottom: 45px; color: var(--purple); }
+    .section-title::after { content: ""; display: block; width: 82px; height: 6px; margin: 12px auto 0; border-radius: 99px; background: linear-gradient(90deg,var(--pink),var(--yellow),var(--mint)); }
+    #about { background: linear-gradient(135deg,#fff1f8,#f3e8ff 55%,#e0f7ff); }
+    .about-box { max-width: 920px; margin: auto; text-align: center; line-height: 1.9; font-family: "Baloo 2", sans-serif; font-size: 19px; color: var(--muted); }
+    .about-box .profile { width: 120px; height: 120px; font-size: 52px; margin-bottom: 25px; }
+    .about-box strong { color: #db2777; font-family: "Cooper Black", "Baloo 2", Georgia, serif; }
+
+    #skills { background: #fffdf3; }
+    .skills-container { max-width: 900px; margin: auto; padding: 32px; border-radius: 28px; background: white; box-shadow: var(--shadow); border: 2px solid #f5e8ff; }
+    .skill { margin-bottom: 25px; } .skill:last-child { margin-bottom: 0; }
+    .skill-info { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 9px; font-size: 16px; }
+    .skill-info span:last-child { color: #a21caf; }
+    .skill-bar { height: 15px; background: #f1e8fa; border-radius: 20px; overflow: hidden; }
+    .skill-progress { height: 100%; border-radius: 20px; background: linear-gradient(90deg,#fb7185,#a855f7,#38bdf8,#2dd4bf); animation: load 1.8s ease both; }
+    @keyframes load { from { width: 0; } }
+
+    #projects { background: linear-gradient(145deg,#eff6ff,#fdf2f8); }
+    .projects-container { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 25px; max-width: 1200px; margin: auto; }
+    .project-card {
+      background: var(--card); padding: 30px 26px; border-radius: 24px; box-shadow: var(--shadow);
+      border: 2px solid white; transition: transform .3s, box-shadow .3s; position: relative; overflow: hidden;
+    }
+    .project-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 7px; background: linear-gradient(90deg,var(--pink),var(--yellow),var(--blue),var(--mint)); }
+    .project-card:hover { transform: translateY(-10px) rotate(-.5deg); box-shadow: 0 25px 45px rgba(124,58,237,.2); }
+    .project-card h3 { color: #7c3aed; font-size: 20px; margin: 8px 0 14px; line-height: 1.45; }
+    .project-card p { color: var(--muted); line-height: 1.75; font-family: "Baloo 2", sans-serif; font-size: 16px; }
+    .tag { display: inline-block; margin: 17px 5px 0 0; padding: 6px 12px; border-radius: 999px; background: #fce7f3; color: #9d174d; font: 700 13px "Baloo 2",sans-serif; }
+    .project-card:nth-child(2) .tag { background: #dbeafe; color: #1d4ed8; }
+    .project-card:nth-child(3) .tag { background: #d1fae5; color: #047857; }
+
+    #contact { background: linear-gradient(135deg,#2e1065,#701a75,#1e3a8a); color: white; }
+    #contact .section-title { color: var(--yellow); }
+    .contact-container { max-width: 720px; margin: auto; padding: 30px; border-radius: 26px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); box-shadow: 0 20px 45px rgba(0,0,0,.15); }
+    .contact-container input, .contact-container textarea {
+      width: 100%; padding: 15px 17px; margin-bottom: 15px; border: 2px solid transparent; border-radius: 13px;
+      outline: none; font: 16px "Baloo 2",sans-serif; color: #291442; background: #fffaff;
+    }
+    .contact-container input:focus, .contact-container textarea:focus { border-color: var(--yellow); box-shadow: 0 0 0 4px rgba(255,209,102,.18); }
+    .contact-container textarea { min-height: 145px; resize: vertical; }
+    .contact-container button { border: 0; cursor: pointer; padding: 13px 25px; border-radius: 999px; background: var(--yellow); color: #40116b; font: 800 16px "Cooper Black","Baloo 2",serif; transition: transform .2s; }
+    .contact-container button:hover { transform: translateY(-3px); }
+
+    footer { text-align: center; padding: 25px; background: #1b1030; color: #f5d0fe; font: 15px "Baloo 2",sans-serif; }
+    #topBtn { position: fixed; bottom: 24px; right: 24px; width: 48px; height: 48px; border: 0; border-radius: 50%; background: linear-gradient(135deg,var(--yellow),var(--pink)); color: #3b0764; font-size: 24px; cursor: pointer; box-shadow: 0 8px 20px rgba(68,10,100,.25); display: none; z-index: 900; }
+    body.dark { --ink: #f7eaff; --muted: #e1d3f5; --paper: #160c28; --card: rgba(43,25,66,.94); }
+    body.dark #about, body.dark #skills, body.dark #projects { background: #211335; }
+    body.dark .skills-container { background: #2b1942; border-color: #563276; }
+    body.dark .project-card { border-color: #563276; }
+    body.dark .skill-bar { background: #4a3261; }
+    body.dark .section-title { color: #e9b7ff; }
+    body.dark .about-box, body.dark .project-card p { color: #e1d3f5; }
+
+    @media (max-width: 850px) {
+      nav { flex-wrap: wrap; justify-content: center; }
+      nav ul { flex-wrap: wrap; justify-content: center; gap: 13px 18px; }
+      .projects-container { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      #about, #skills, #projects { background-attachment: scroll; }
+      header { padding: 15px 5%; }
+      .logo { font-size: 25px; }
+      nav ul { gap: 12px; }
+      nav a { font-size: 14px; }
+      #home { min-height: 82vh; padding: 55px 6%; }
+      .profile { width: 115px; height: 115px; font-size: 52px; }
+      section { padding: 65px 6%; }
+      .projects-container { grid-template-columns: 1fr; }
+      .skills-container, .contact-container { padding: 22px 18px; }
+      .home-content p { font-size: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="dark">
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="logo">✨ Soniya</div>
+      <ul>
+        <li><a href="file:///C:/Users/soniy/Downloads/new_advance.html#home">Home</a></li><li><a href="file:///C:/Users/soniy/Downloads/new_advance.html#about">About</a></li><li><a href="file:///C:/Users/soniy/Downloads/new_advance.html#skills">Skills</a></li><li><a href="file:///C:/Users/soniy/Downloads/new_advance.html#projects">Projects</a></li><li><a href="file:///C:/Users/soniy/Downloads/new_advance.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-btn" type="button" onclick="darkMode()" aria-label="Switch to light mode">☀️</button>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="home-content">
+      <div class="profile" aria-label="Soniya initial">S</div>
+      <h1>Hello, I'm <span>Soniya!</span></h1>
+      <h2 class="typing">💻 B.Tech IT Student</h2>
+      <p>I am a passionate Information Technology student interested in programming, web development, problem solving and modern technologies.</p>
+      <a href="file:///C:/Users/soniy/Downloads/new_advance.html#about" class="btn">Explore My Portfolio ✨</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">🌸 About Me</h2>
+    <div class="about-box">
+      <div class="profile">S</div>
+      <p>Hello! I am <strong>Soniya</strong>, a first-year B.Tech Information Technology student. I enjoy learning programming languages, designing websites and exploring new technologies. My goal is to become a skilled software developer and create useful applications that solve real-world problems.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">🚀 My Skills</h2>
+    <div class="skills-container">
+      <div class="skill"><div class="skill-info"><span>HTML</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div></div>
+      <div class="skill"><div class="skill-info"><span>CSS</span><span>85%</span></div><div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div></div>
+      <div class="skill"><div class="skill-info"><span>C Programming</span><span>75%</span></div><div class="skill-bar"><div class="skill-progress" style="width:75%"></div></div></div>
+      <div class="skill"><div class="skill-info"><span>Python</span><span>70%</span></div><div class="skill-bar"><div class="skill-progress" style="width:70%"></div></div></div>
+      <div class="skill"><div class="skill-info"><span>Problem Solving</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" style="width:80%"></div></div></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">🎨 My Projects</h2>
+    <div class="projects-container">
+      <article class="project-card"><h3>🌐 Personal Portfolio</h3><p>A modern responsive portfolio website created using HTML, CSS and JavaScript.</p><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></article>
+      <article class="project-card"><h3>🧑‍🎓 Student Management System</h3><p>A beginner-level system designed to manage student information using programming concepts.</p><span class="tag">C Programming</span></article>
+      <article class="project-card"><h3>🧮 Simple Calculator</h3><p>A calculator application created to practise arithmetic operations and programming fundamentals.</p><span class="tag">Python</span></article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">💌 Contact Me</h2>
+    <div class="contact-container">
+      <form onsubmit="sendMessage(event)">
+        <input type="text" name="name" placeholder="Your Name" aria-label="Your name" required="">
+        <input type="email" name="email" placeholder="Your Email" aria-label="Your email" required="">
+        <textarea name="message" placeholder="Your Message" aria-label="Your message" required=""></textarea>
+        <button type="submit">Send Message 🚀</button>
+      </form>
+    </div>
+  </section>
+
+  <footer><p>© 2026 Soniya | B.Tech IT Student 💖</p></footer>
+  <button id="topBtn" type="button" onclick="goTop()" aria-label="Back to top" style="display: none;">↑</button>
+
+  <script>
+    function darkMode() {
+      document.body.classList.toggle("dark");
+      const button = document.querySelector(".theme-btn");
+      button.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+      button.setAttribute("aria-label", document.body.classList.contains("dark") ? "Switch to light mode" : "Switch to dark mode");
+    }
+    function sendMessage(event) {
+      event.preventDefault();
+      alert("Thank you for contacting Soniya! 🚀 This demo form does not send messages yet.");
+      event.target.reset();
+    }
+    const topButton = document.getElementById("topBtn");
+    window.addEventListener("scroll", function () {
+      topButton.style.display = document.documentElement.scrollTop > 300 ? "block" : "none";
+    });
+    function goTop() { window.scrollTo({ top: 0, behavior: "smooth" }); }
+  </script>
+
+
+</body></html>
